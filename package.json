@@ -1,0 +1,82 @@
+{
+  "name": "n8n-nodes-vercel",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Vercel providing 12 resources and 80+ operations for managing deployments, projects, domains, environment variables, and team resources. Includes webhook triggers for deployment events.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-vercel.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-vercel#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-vercel/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "vercel",
+    "deployment",
+    "serverless",
+    "edge",
+    "nextjs",
+    "frontend",
+    "ci-cd",
+    "devops",
+    "automation",
+    "workflow"
+  ],
+  "main": "dist/nodes/Vercel/Vercel.node.js",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/VercelApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Vercel/Vercel.node.js",
+      "dist/nodes/Vercel/VercelTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts --ignore-pattern dist/ --ignore-pattern node_modules/",
+    "lint:fix": "eslint . --ext .ts --fix --ignore-pattern dist/ --ignore-pattern node_modules/",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.30.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
